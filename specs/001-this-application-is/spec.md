@@ -1,6 +1,6 @@
 # Feature Specification: Digital Product Marketplace for Content Creators
 
-**Feature Branch**: `001-lionduzz-project`
+**Feature Branch**: `001-this-application-is`
 **Created**: 2025-10-06
 **Status**: Draft
 **Input**: User description: "This application is a marketplace where content creator can sell digital products like courses, ebooks, and online trainings, each creator can sell those products individually or by subscription, if its a individual product I recieve 15% share, if subscription then 10% share, the application is web but its need to be mobile responsive, with light and dark theme, authentication, billing management, products management, sales reports, and subscription management"
@@ -24,8 +24,8 @@ As a content creator, I want to sell my digital products (courses, ebooks, onlin
 3. **Given** a creator has made a sale, **When** they view their sales report, **Then** they should see the correct revenue share (85% for individual products, 90% for subscriptions).
 
 ### Edge Cases
-- What happens if a creator deletes a product that a customer has already purchased? [NEEDS CLARIFICATION: Should the customer retain access or be refunded?]
-- How does the system handle subscription cancellations and refunds? [NEEDS CLARIFICATION: What is the policy for prorated refunds?]
+- Creators cannot delete products that have been purchased.
+- Subscription management, including cancellations and refunds, will be handled by Stripe.
 
 ## Requirements *(mandatory)*
 
@@ -35,11 +35,13 @@ As a content creator, I want to sell my digital products (courses, ebooks, onlin
 - **FR-003**: System MUST allow content creators to sell products individually or through a subscription model.
 - **FR-004**: System MUST calculate and distribute revenue shares correctly (15% for the platform on individual sales, 10% for the platform on subscriptions).
 - **FR-005**: System MUST provide a responsive web interface with light and dark themes.
-- **FR-006**: System MUST include user authentication and authorization. [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST provide a billing management system for customers.
+- **FR-006**: System MUST include user authentication via email/password and Google OAuth, with roles for admin, creator, and customer.
+- **FR-007**: System MUST provide a billing management system for customers, integrated with Stripe.
 - **FR-008**: System MUST provide a product management interface for creators.
 - **FR-009**: System MUST generate sales reports for creators.
 - **FR-010**: System MUST provide a subscription management interface for both creators and customers.
+- **FR-011**: System MUST have a design inspired by https://www.klarna.com/us/.
+- **FR-012**: System MUST support internationalization, initially with Portuguese (pt-BR) and English (en-US). The default language will be Portuguese. The application will initially be for the Brazilian market, with plans for future expansion.
 
 ### Key Entities *(include if feature involves data)*
 - **User**: Represents both content creators and customers, with attributes for authentication and profile information.
@@ -59,11 +61,11 @@ As a content creator, I want to sell my digital products (courses, ebooks, onlin
 - [ ] All mandatory sections completed
 
 ### Requirement Completeness
-- [ ] No [NEEDS CLARIFICATION] markers remain
-- [ ] Requirements are testable and unambiguous
-- [ ] Success criteria are measurable
-- [ ] Scope is clearly bounded
-- [ ] Dependencies and assumptions identified
+- [X] No [NEEDS CLARIFICATION] markers remain
+- [X] Requirements are testable and unambiguous
+- [X] Success criteria are measurable
+- [X] Scope is clearly bounded
+- [X] Dependencies and assumptions identified
 
 ---
 
@@ -72,10 +74,10 @@ As a content creator, I want to sell my digital products (courses, ebooks, onlin
 
 - [X] User description parsed
 - [X] Key concepts extracted
-- [ ] Ambiguities marked
+- [X] Ambiguities marked
 - [X] User scenarios defined
 - [X] Requirements generated
 - [X] Entities identified
-- [ ] Review checklist passed
+- [X] Review checklist passed
 
 ---
