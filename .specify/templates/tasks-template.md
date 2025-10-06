@@ -100,19 +100,22 @@ Task: "Integration test auth in tests/integration/test_auth.py"
 ## Task Generation Rules
 *Applied during main() execution*
 
-1. **From Contracts**:
+1. **From Constitution**:
+   - All tasks MUST align with the principles outlined in the project constitution (e.g., Clean Architecture, SOLID, DDD).
+
+2. **From Contracts**:
    - Each contract file → contract test task [P]
    - Each endpoint → implementation task
    
-2. **From Data Model**:
+3. **From Data Model**:
    - Each entity → model creation task [P]
    - Relationships → service layer tasks
    
-3. **From User Stories**:
+4. **From User Stories**:
    - Each story → integration test [P]
    - Quickstart scenarios → validation tasks
 
-4. **Ordering**:
+5. **Ordering**:
    - Setup → Tests → Models → Services → Endpoints → Polish
    - Dependencies block parallel execution
 

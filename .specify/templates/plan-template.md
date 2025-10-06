@@ -47,7 +47,13 @@
 ## Constitution Check
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **Clean Architecture**: Does the design separate concerns and avoid dependencies on frameworks, UI, and database?
+- [ ] **SOLID Principles**: Does the proposed design adhere to SOLID principles?
+- [ ] **Domain-Driven Design (DDD)**: Is the design centered around the domain model and business logic?
+- [ ] **LGPD Compliance**: Are there any potential impacts on data privacy and security? If so, have they been addressed?
+- [ ] **Observability**: Does the design include logging, metrics, and tracing?
+- [ ] **Monitoring**: Are there plans for monitoring the health and performance of the system?
+- [ ] **CI/CD**: Does the plan account for automated testing and deployment?
 
 ## Project Structure
 
