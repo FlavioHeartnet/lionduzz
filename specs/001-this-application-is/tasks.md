@@ -63,6 +63,7 @@
 - [X] T041 [P] **Frontend**: Ensure mobile responsiveness.
 - [X] T042 [P] **Docs**: Update `README.md` with setup and usage instructions.
 - [X] T043 [P] **Frontend**: Setup Tailwind CSS.
+- [X] T044 [P] **Frontend**: Redesign UI with shadcn/ui.
 
 ## Dependencies
 - T001-T006 must be completed before all other tasks.

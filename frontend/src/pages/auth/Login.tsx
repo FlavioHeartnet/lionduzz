@@ -1,5 +1,8 @@
 import React from 'react';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 const Login: React.FC = () => {
   const handleGoogleLogin = async () => {
@@ -23,14 +26,26 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form>
-        <input type="email" name="email" placeholder="Email" />
-        <input type="password" name="password" placeholder="Password" />
-        <button type="submit">Login</button>
-      </form>
-      <button onClick={handleGoogleLogin}>Login with Google</button>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+        <div className="text-center">
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
+            Login
+          </h1>
+        </div>
+        <form className="space-y-6">
+          <div>
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" type="email" placeholder="Email" />
+          </div>
+          <div>
+            <Label htmlFor="password">Password</Label>
+            <Input id="password" type="password" placeholder="Password" />
+          </div>
+          <Button type="submit" className="w-full">Login</Button>
+        </form>
+        <Button onClick={handleGoogleLogin} className="w-full">Login with Google</Button>
+      </div>
     </div>
   );
 };
