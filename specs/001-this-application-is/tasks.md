@@ -62,6 +62,7 @@
 - [X] T040 [P] **Frontend**: Implement light and dark themes.
 - [X] T041 [P] **Frontend**: Ensure mobile responsiveness.
 - [X] T042 [P] **Docs**: Update `README.md` with setup and usage instructions.
+- [X] T043 [P] **Frontend**: Setup Tailwind CSS.
 
 ## Dependencies
 - T001-T006 must be completed before all other tasks.

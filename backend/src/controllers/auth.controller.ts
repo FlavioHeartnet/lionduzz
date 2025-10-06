@@ -15,6 +15,6 @@ export class AuthController {
   @UseGuards(AuthGuard('jwt'))
   @Post('sync')
   async sync(@Request() req) {
-    return req.user;
+    return await req.user;
   }
 }
