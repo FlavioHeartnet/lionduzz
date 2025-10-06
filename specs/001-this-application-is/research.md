@@ -8,8 +8,8 @@
 
 ## Firebase Authentication with NestJS
 
-- **Decision**: Use the `firebase-admin` package for verifying ID tokens on the backend.
-- **Rationale**: This is the official and recommended way to integrate Firebase Authentication with a custom backend. It provides a secure way to verify the authenticity of users.
+- **Decision**: Use the `firebase-admin` package for verifying ID tokens on the backend. The backend will receive the ID token from the frontend, verify it, and then create a user in the PostgreSQL database.
+- **Rationale**: This is the official and recommended way to integrate Firebase Authentication with a custom backend. It provides a secure way to verify the authenticity of users and allows for syncing user data with the application's database.
 - **Alternatives considered**: None, as this is the standard approach.
 
 ## Mux for Video Streaming

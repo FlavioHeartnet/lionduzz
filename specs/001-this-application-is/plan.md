@@ -30,7 +30,7 @@
 - Phase 3-4: Implementation execution (manual or via tools)
 
 ## Summary
-A marketplace for content creators to sell digital products, with features like individual and subscription sales, revenue sharing, and management tools. The technical approach includes a Vite frontend, NestJS backend, PostgreSQL database, Firebase for authentication and storage, Stripe for payments, and Mux for video streaming.
+A marketplace for content creators to sell digital products, with features like individual and subscription sales, revenue sharing, and management tools. The technical approach includes a Vite frontend, NestJS backend, PostgreSQL database, Firebase for authentication and storage, Stripe for payments, and Mux for video streaming. The frontend will handle sign-in, sign-up with Google, and forgot password flows using the Firebase library, while the backend will verify Firebase ID tokens and manage user data.
 
 ## Technical Context
 **Language/Version**: TypeScript
@@ -89,7 +89,7 @@ frontend/
 ## Phase 0: Outline & Research
 1. **Extract unknowns from Technical Context** above:
    - Research best practices for integrating Stripe with NestJS.
-   - Research best practices for integrating Firebase Authentication with NestJS.
+   - Research best practices for verifying Firebase ID tokens in a NestJS backend and syncing user data to a PostgreSQL database.
    - Research best practices for using Mux for video streaming.
 
 2. **Consolidate findings** in `research.md` using format:

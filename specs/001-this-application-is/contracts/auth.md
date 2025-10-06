@@ -2,28 +2,18 @@
 
 ## Endpoints
 
-### POST /auth/register
-- **Description**: Register a new user.
-- **Request Body**:
-  - `email`: string
-  - `password`: string
-  - `name`: string
-- **Response**: 
-  - `id`: string
-  - `email`: string
-  - `name`: string
-
-### POST /auth/login
-- **Description**: Log in a user.
-- **Request Body**:
-  - `email`: string
-  - `password`: string
-- **Response**:
-  - `accessToken`: string
-
-### POST /auth/google
-- **Description**: Log in a user with Google.
+### POST /auth/provider
+- **Description**: Authenticate a user with a provider (e.g., Google).
 - **Request Body**:
   - `idToken`: string
 - **Response**:
   - `accessToken`: string
+
+### POST /auth/sync
+- **Description**: Synchronize a user from Firebase to the PostgreSQL database.
+- **Request Body**:
+  - `idToken`: string
+- **Response**:
+  - `id`: string
+  - `email`: string
+  - `name`: string
