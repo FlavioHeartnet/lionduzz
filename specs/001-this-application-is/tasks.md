@@ -11,57 +11,57 @@
 - **Web app**: `backend/src/`, `frontend/src/`
 
 ## Phase 3.1: Setup
-- [ ] T001 [P] **Backend**: Initialize NestJS project in `backend/`.
-- [ ] T002 [P] **Frontend**: Initialize Vite + React project in `frontend/`.
-- [ ] T003 [P] **Backend**: Install dependencies: `@nestjs/stripe`, `firebase-admin`, `pg`.
-- [ ] T004 [P] **Frontend**: Install dependencies: `firebase`, `stripe-js`, `react-router-dom`.
-- [ ] T005 [P] **Backend**: Configure linting and formatting tools.
-- [ ] T006 [P] **Frontend**: Configure linting and formatting tools.
+- [X] T001 [P] **Backend**: Initialize NestJS project in `backend/`.
+- [X] T002 [P] **Frontend**: Initialize Vite + React project in `frontend/`.
+- [X] T003 [P] **Backend**: Install dependencies: `@nestjs/stripe`, `firebase-admin`, `pg`.
+- [X] T004 [P] **Frontend**: Install dependencies: `firebase`, `stripe-js`, `react-router-dom`.
+- [X] T005 [P] **Backend**: Configure linting and formatting tools.
+- [X] T006 [P] **Frontend**: Configure linting and formatting tools.
 
 ## Phase 3.2: Tests First (TDD) ⚠️ MUST COMPLETE BEFORE 3.3
 **CRITICAL: These tests MUST be written and MUST FAIL before ANY implementation**
-- [ ] T007 [P] **Backend**: Contract test POST /auth/provider in `backend/tests/contract/test_auth_provider.py`.
-- [ ] T008 [P] **Backend**: Contract test POST /auth/sync in `backend/tests/contract/test_auth_sync.py`.
-- [ ] T009 [P] **Backend**: Contract test GET /products in `backend/tests/contract/test_products_get.py`.
-- [ ] T010 [P] **Backend**: Contract test POST /products in `backend/tests/contract/test_products_post.py`.
-- [ ] T011 [P] **Backend**: Contract test GET /sales in `backend/tests/contract/test_sales_get.py`.
-- [ ] T012 [P] **Backend**: Contract test POST /sales in `backend/tests/contract/test_sales_post.py`.
-- [ ] T013 [P] **Backend**: Contract test GET /subscriptions in `backend/tests/contract/test_subscriptions_get.py`.
-- [ ] T014 [P] **Backend**: Contract test POST /subscriptions in `backend/tests/contract/test_subscriptions_post.py`.
-- [ ] T015 [P] **Frontend**: Integration test user registration and login in `frontend/tests/integration/test_auth.js`.
+- [X] T007 [P] **Backend**: Contract test POST /auth/provider in `backend/tests/contract/test_auth_provider.py`.
+- [X] T008 [P] **Backend**: Contract test POST /auth/sync in `backend/tests/contract/test_auth_sync.py`.
+- [X] T009 [P] **Backend**: Contract test GET /products in `backend/tests/contract/test_products_get.py`.
+- [X] T010 [P] **Backend**: Contract test POST /products in `backend/tests/contract/test_products_post.py`.
+- [X] T011 [P] **Backend**: Contract test GET /sales in `backend/tests/contract/test_sales_get.py`.
+- [X] T012 [P] **Backend**: Contract test POST /sales in `backend/tests/contract/test_sales_post.py`.
+- [X] T013 [P] **Backend**: Contract test GET /subscriptions in `backend/tests/contract/test_subscriptions_get.py`.
+- [X] T014 [P] **Backend**: Contract test POST /subscriptions in `backend/tests/contract/test_subscriptions_post.py`.
+- [X] T015 [P] **Frontend**: Integration test user registration and login in `frontend/tests/integration/test_auth.js`.
 
 ## Phase 3.3: Core Implementation (ONLY after tests are failing)
-- [ ] T016 [P] **Backend**: User model in `backend/src/models/user.entity.ts`.
-- [ ] T017 [P] **Backend**: Product model in `backend/src/models/product.entity.ts`.
-- [ ] T018 [P] **Backend**: Sale model in `backend/src/models/sale.entity.ts`.
-- [ ] T019 [P] **Backend**: Subscription model in `backend/src/models/subscription.entity.ts`.
-- [ ] T020 [P] **Backend**: AuthService in `backend/src/services/auth.service.ts`.
-- [ ] T021 [P] **Backend**: ProductService in `backend/src/services/product.service.ts`.
-- [ ] T022 [P] **Backend**: SaleService in `backend/src/services/sale.service.ts`.
-- [ ] T023 [P] **Backend**: SubscriptionService in `backend/src/services/subscription.service.ts`.
-- [ ] T024 **Backend**: Auth controller in `backend/src/controllers/auth.controller.ts`.
-- [ ] T025 **Backend**: Product controller in `backend/src/controllers/product.controller.ts`.
-- [ ] T026 **Backend**: Sale controller in `backend/src/controllers/sale.controller.ts`.
-- [ ] T027 **Backend**: Subscription controller in `backend/src/controllers/subscription.controller.ts`.
-- [ ] T028 [P] **Frontend**: Authentication views (Login, Register, Forgot Password) in `frontend/src/pages/auth`.
-- [ ] T029 [P] **Frontend**: Product views (List, Detail, Create, Edit) in `frontend/src/pages/products`.
-- [ ] T030 [P] **Frontend**: Sales report view in `frontend/src/pages/sales`.
-- [ ] T031 [P] **Frontend**: Subscription management view in `frontend/src/pages/subscriptions`.
+- [X] T016 [P] **Backend**: User model in `backend/src/models/user.entity.ts`.
+- [X] T017 [P] **Backend**: Product model in `backend/src/models/product.entity.ts`.
+- [X] T018 [P] **Backend**: Sale model in `backend/src/models/sale.entity.ts`.
+- [X] T019 [P] **Backend**: Subscription model in `backend/src/models/subscription.entity.ts`.
+- [X] T020 [P] **Backend**: AuthService in `backend/src/services/auth.service.ts`.
+- [X] T021 [P] **Backend**: ProductService in `backend/src/services/product.service.ts`.
+- [X] T022 [P] **Backend**: SaleService in `backend/src/services/sale.service.ts`.
+- [X] T023 [P] **Backend**: SubscriptionService in `backend/src/services/subscription.service.ts`.
+- [X] T024 **Backend**: Auth controller in `backend/src/controllers/auth.controller.ts`.
+- [X] T025 **Backend**: Product controller in `backend/src/controllers/product.controller.ts`.
+- [X] T026 **Backend**: Sale controller in `backend/src/controllers/sale.controller.ts`.
+- [X] T027 **Backend**: Subscription controller in `backend/src/controllers/subscription.controller.ts`.
+- [X] T028 [P] **Frontend**: Authentication views (Login, Register, Forgot Password) in `frontend/src/pages/auth`.
+- [X] T029 [P] **Frontend**: Product views (List, Detail, Create, Edit) in `frontend/src/pages/products`.
+- [X] T030 [P] **Frontend**: Sales report view in `frontend/src/pages/sales`.
+- [X] T031 [P] **Frontend**: Subscription management view in `frontend/src/pages/subscriptions`.
 
 ## Phase 3.4: Integration
-- [ ] T032 **Backend**: Connect services to the database.
-- [ ] T033 **Backend**: Implement Firebase authentication guard.
-- [ ] T034 **Backend**: Implement Stripe integration for payments.
-- [ ] T035 **Backend**: Implement Mux integration for video uploads.
-- [ ] T036 **Frontend**: Connect views to backend APIs.
+- [X] T032 **Backend**: Connect services to the database.
+- [X] T033 **Backend**: Implement Firebase authentication guard.
+- [X] T034 **Backend**: Implement Stripe integration for payments.
+- [X] T035 **Backend**: Implement Mux integration for video uploads.
+- [X] T036 **Frontend**: Connect views to backend APIs.
 
 ## Phase 3.5: Polish
-- [ ] T037 [P] **Backend**: Unit tests for services.
-- [ ] T038 [P] **Frontend**: Unit tests for components.
-- [ ] T039 [P] **Backend**: Add logging and error handling.
-- [ ] T040 [P] **Frontend**: Implement light and dark themes.
-- [ ] T041 [P] **Frontend**: Ensure mobile responsiveness.
-- [ ] T042 [P] **Docs**: Update `README.md` with setup and usage instructions.
+- [X] T037 [P] **Backend**: Unit tests for services.
+- [X] T038 [P] **Frontend**: Unit tests for components.
+- [X] T039 [P] **Backend**: Add logging and error handling.
+- [X] T040 [P] **Frontend**: Implement light and dark themes.
+- [X] T041 [P] **Frontend**: Ensure mobile responsiveness.
+- [X] T042 [P] **Docs**: Update `README.md` with setup and usage instructions.
 
 ## Dependencies
 - T001-T006 must be completed before all other tasks.
