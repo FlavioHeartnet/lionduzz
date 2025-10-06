@@ -64,6 +64,7 @@
 - [X] T042 [P] **Docs**: Update `README.md` with setup and usage instructions.
 - [X] T043 [P] **Frontend**: Setup Tailwind CSS.
 - [X] T044 [P] **Frontend**: Redesign UI with shadcn/ui.
+- [ ] T045 [P] **Frontend**: Redesign Login Page UI.
 
 ## Dependencies
 - T001-T006 must be completed before all other tasks.

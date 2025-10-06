@@ -33,7 +33,7 @@ const Login: React.FC = () => {
             Login
           </h1>
         </div>
-        <form className="space-y-6">
+        <form className="space-y-6 flex min-h-svh flex-col items-center justify-center">
           <div>
             <Label htmlFor="email">Email</Label>
             <Input id="email" type="email" placeholder="Email" />
