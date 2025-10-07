@@ -1,12 +1,24 @@
-import React from 'react';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import React, { useState, type FormEvent } from 'react';
+import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { Button } from './../../components/ui/button';
 import { Input } from './../../components/ui/input';
 import { Label } from './../../components/ui/label';
+import { useNavigate } from 'react-router-dom';
+import { useToast } from '../../hooks/use-toast';
+import { app } from '../../lib/firebase/setup';
 
 const Login: React.FC = () => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  const [fullName, setFullName] = useState("");
+
+
   const handleGoogleLogin = async () => {
-    const auth = getAuth();
+    const auth = getAuth(app);
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
@@ -25,26 +37,116 @@ const Login: React.FC = () => {
     }
   };
 
+  function handleAuth(event: FormEvent<HTMLFormElement>): void {
+    event.preventDefault();
+    setLoading(true);
+
+    const auth = getAuth(app);
+
+    if (isLogin) {
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          toast({ title: "Login successful!" });
+          navigate("/");
+        })
+        .catch((error) => {
+          toast({ title: "Error logging in", description: error.message, variant: "destructive" });
+        })
+        .finally(() => setLoading(false));
+    } else {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          toast({ title: "Account created successfully!" });
+          navigate("/");
+        })
+        .catch((error) => {
+          toast({ title: "Error creating account", description: error.message, variant: "destructive" });
+        })
+        .finally(() => setLoading(false));
+    }
+  }
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
+   <div className="min-h-screen flex items-center justify-center bg-background px-4">
+      <div className="w-full max-w-md space-y-8 animate-fade-in">
         <div className="text-center">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
-            Login
+          <h1 className="text-4xl font-serif font-bold text-foreground mb-2">
+            {isLogin ? "Welcome back" : "Join our community"}
           </h1>
+          <p className="text-muted-foreground">
+            {isLogin
+              ? "Sign in to continue reading and writing"
+              : "Create an account to start your journey"}
+          </p>
         </div>
-        <form className="space-y-6 flex min-h-svh flex-col items-center justify-center">
-          <div>
+
+        <form onSubmit={handleAuth} className="space-y-6">
+          {!isLogin && (
+            <div className="space-y-2">
+              <Label htmlFor="fullName">Full Name</Label>
+              <Input
+                id="fullName"
+                type="text"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                placeholder="John Doe"
+                required
+                disabled={loading}
+              />
+            </div>
+          )}
+
+          <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="Email" />
+            <Input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              required
+              disabled={loading}
+            />
           </div>
-          <div>
+
+          <div className="space-y-2">
             <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" placeholder="Password" />
+            <Input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="••••••••"
+              required
+              disabled={loading}
+            />
           </div>
-          <Button type="submit" className="w-full">Login</Button>
+
+          <Button type="submit" className="w-full" disabled={loading}>
+            {loading ? "Loading..." : isLogin ? "Sign In" : "Sign Up"}
+          </Button>
         </form>
-        <Button onClick={handleGoogleLogin} className="w-full">Login with Google</Button>
+
+        <div className="text-center">
+          <button
+            type="button"
+            onClick={handleGoogleLogin}
+            className="w-full mt-4 bg-white text-medium-text border border-medium-darkGray hover:bg-medium-lightGray"
+            disabled={loading}
+          >
+            Sign in with Google
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsLogin(!isLogin)}
+            className="text-sm text-primary hover:underline mt-4"
+            disabled={loading}
+          >
+            {isLogin
+              ? "Don't have an account? Sign up"
+              : "Already have an account? Sign in"}
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -59,12 +59,16 @@
 - [X] T037 [P] **Backend**: Unit tests for services.
 - [X] T038 [P] **Frontend**: Unit tests for components.
 - [X] T039 [P] **Backend**: Add logging and error handling.
-- [X] T040 [P] **Frontend**: Implement light and dark themes.
-- [X] T041 [P] **Frontend**: Ensure mobile responsiveness.
-- [X] T042 [P] **Docs**: Update `README.md` with setup and usage instructions.
-- [X] T043 [P] **Frontend**: Setup Tailwind CSS.
-- [X] T044 [P] **Frontend**: Redesign UI with shadcn/ui.
-- [ ] T045 [P] **Frontend**: Redesign Login Page UI.
+- [X] T040 [P] **Frontend**: Ensure mobile responsiveness.
+- [X] T041 [P] **Docs**: Update `README.md` with setup and usage instructions.
+- [X] T042 [P] **Frontend**: Setup Tailwind CSS.
+- [ ] T043 [P] **Frontend**: Redesign UI with shadcn/ui.
+- [ ] T044 [P] **Frontend**: Redesign Login Page UI.
+- [ ] T045 [P] **Frontend**: Create color palette and typography based on Medium.com design.
+- [ ] T046 [P] **Frontend**: Implement light and dark themes.
+- [ ] T047 [P] **Frontend**: Implement internationalization (i18n) with `i18next` and `react-i18next`.
+- [ ] T048 [P] **Frontend**: Implement Medium.com-inspired design across the application.
+- [X] T049 [P] **Frontend**: Create 'Login with Google' button in `frontend/src/pages/auth/Login.tsx`.
 
 ## Dependencies
 - T001-T006 must be completed before all other tasks.
