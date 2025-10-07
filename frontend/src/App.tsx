@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './styles/theme';
-import { GlobalStyles } from './styles/global';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from "./components/ui/toaster";
+import { Toaster as Sonner } from "./components/ui/sonner";
+import { TooltipProvider } from "./components/ui/tooltip";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import ForgotPassword from './pages/auth/ForgotPassword';
@@ -12,20 +12,15 @@ import ProductCreate from './pages/products/ProductCreate';
 import ProductEdit from './pages/products/ProductEdit';
 import SalesReport from './pages/sales/SalesReport';
 import SubscriptionManagement from './pages/subscriptions/SubscriptionManagement';
+import './App.css'
 
 function App() {
-  const [theme, setTheme] = useState('light');
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
-
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
-
   return (
-    <ThemeProvider theme={themeMode}>
-      <GlobalStyles />
-      <Router>
-        <button onClick={toggleTheme}>Toggle Theme</button>
+
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -37,8 +32,8 @@ function App() {
           <Route path="/sales" element={<SalesReport />} />
           <Route path="/subscriptions" element={<SubscriptionManagement />} />
         </Routes>
-      </Router>
-    </ThemeProvider>
+      </BrowserRouter>
+    </TooltipProvider>
   );
 }
 
