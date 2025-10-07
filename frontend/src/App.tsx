@@ -13,6 +13,8 @@ import ProductEdit from './pages/products/ProductEdit';
 import SalesReport from './pages/sales/SalesReport';
 import SubscriptionManagement from './pages/subscriptions/SubscriptionManagement';
 import './App.css'
+import { Home } from "./pages/Home";
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
