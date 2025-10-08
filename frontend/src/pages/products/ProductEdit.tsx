@@ -1,4 +1,5 @@
-import { FormEvent, useMemo, useState } from "react";
+import {  useMemo, useState } from "react";
+import type { FormEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PageShell } from "../../components/PageShell";
 import { Button } from "../../components/ui/button";

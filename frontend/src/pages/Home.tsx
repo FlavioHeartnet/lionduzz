@@ -43,7 +43,7 @@ export const Home = () => {
               playbooks, data-backed sales tactics, and the design decisions powering our platform.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button size="lg" className="px-6 py-5 text-base" asChild>
+              <Button size="lg" variant={"default"} className="px-6 py-5 text-base" asChild>
                 <Link to="/register">Start publishing</Link>
               </Button>
               <Button size="lg" variant="ghost" className="px-6 py-5 text-base" asChild>

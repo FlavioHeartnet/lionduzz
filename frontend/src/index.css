@@ -1,4 +1,8 @@
+@import "tailwindcss";
 @reference "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 @layer base {
@@ -79,17 +83,19 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    @apply antialiased;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   
   /* Typography for reading content */
   .prose {
-    @apply text-foreground;
+    color: hsl(var(--foreground));
     font-family: 'Lora', Georgia, serif;
     font-size: 20px;
     line-height: 1.58;
@@ -116,7 +122,8 @@
   }
   
   .prose a {
-    @apply text-primary underline underline-offset-2 hover:opacity-80 transition-opacity;
+    color: hsl(var(--primary));
+    @apply underline underline-offset-2 hover:opacity-80 transition-opacity;
   }
 }
 
