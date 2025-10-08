@@ -67,8 +67,9 @@
 - [ ] T045 [P] **Frontend**: Create color palette and typography based on Medium.com design.
 - [ ] T046 [P] **Frontend**: Implement light and dark themes.
 - [ ] T047 [P] **Frontend**: Implement internationalization (i18n) with `i18next` and `react-i18next`.
-- [ ] T048 [P] **Frontend**: Implement Medium.com-inspired design across the application.
+- [X] T048 [P] **Frontend**: Implement Medium.com-inspired design across the application.
 - [X] T049 [P] **Frontend**: Create 'Login with Google' button in `frontend/src/pages/auth/Login.tsx`.
+- [X] T050 [P] **Frontend**: Expand `frontend/src/components/Header.tsx` with full navigation, profile actions, and theme toggle.
 
 ## Dependencies
 - T001-T006 must be completed before all other tasks.

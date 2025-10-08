@@ -15,7 +15,6 @@ import SubscriptionManagement from './pages/subscriptions/SubscriptionManagement
 import './App.css'
 import { Home } from "./pages/Home";
 
-
 function App() {
   return (
 
@@ -23,18 +22,20 @@ function App() {
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/products" element={<ProductList />} />
-          <Route path="/products/create" element={<ProductCreate />} />
-          <Route path="/products/:id" element={<ProductDetail />} />
-          <Route path="/products/:id/edit" element={<ProductEdit />} />
-          <Route path="/sales" element={<SalesReport />} />
-          <Route path="/subscriptions" element={<SubscriptionManagement />} />
-        </Routes>
+        <div className="min-h-screen bg-background text-foreground">
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/products" element={<ProductList />} />
+            <Route path="/products/create" element={<ProductCreate />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
+            <Route path="/products/:id/edit" element={<ProductEdit />} />
+            <Route path="/sales" element={<SalesReport />} />
+            <Route path="/subscriptions" element={<SubscriptionManagement />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   );

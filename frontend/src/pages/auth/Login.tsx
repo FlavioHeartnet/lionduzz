@@ -67,8 +67,8 @@ const Login: React.FC = () => {
   }
 
   return (
-   <div className="min-h-screen flex items-center justify-center bg-background px-4">
-      <div className="w-full max-w-md space-y-8 animate-fade-in">
+   <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-secondary via-background to-background px-4">
+      <div className="w-full max-w-md space-y-8 animate-in fade-in-50 duration-700">
         <div className="text-center">
           <h1 className="text-4xl font-serif font-bold text-foreground mb-2">
             {isLogin ? "Welcome back" : "Join our community"}
@@ -127,11 +127,11 @@ const Login: React.FC = () => {
           </Button>
         </form>
 
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <button
             type="button"
             onClick={handleGoogleLogin}
-            className="w-full mt-4 bg-white text-medium-text border border-medium-darkGray hover:bg-medium-lightGray"
+            className="w-full rounded-full border border-border bg-card px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
             disabled={loading}
           >
             Sign in with Google
@@ -139,7 +139,7 @@ const Login: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsLogin(!isLogin)}
-            className="text-sm text-primary hover:underline mt-4"
+            className="block text-sm font-medium text-primary transition-colors hover:opacity-80"
             disabled={loading}
           >
             {isLogin
